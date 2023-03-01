@@ -1,0 +1,41 @@
+body{
+    background: rgb(182, 182, 177);
+}
+
+.today{
+    text-align: center;
+}
+
+.list{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    width: 450px;
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+
+.flex-list{
+    display: flex;
+    flex-direction: row;
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+     border-bottom: 1px gray solid;
+}
+
+.flex-list div{
+    margin: 20px;
+    
+}
+
+.flex-list input{
+    margin-right: 20px;
+}
+
+.clear{
+    margin: 10px;
+    text-align: center;
+}
