@@ -13,7 +13,7 @@ module.exports = {
     }),
   ],
   output: {
-    filename: '[naem].js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
