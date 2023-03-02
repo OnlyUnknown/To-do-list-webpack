@@ -48,3 +48,8 @@ body {
 .enter {
   display: none;
 }
+
+.right{
+  margin-left: auto;
+  margin-right: 10px;
+}

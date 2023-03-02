@@ -1,7 +1,6 @@
 import './style.css';
 import { add } from './add';
-
-
+import { event } from './remove';
 
 const list = [
   {
@@ -25,7 +24,7 @@ const list = [
 const flex = document.querySelector('.list');
 
 list.forEach((task) => {
-  flex.innerHTML += `<div class="flex-list"><input type="checkbox"> ${task.discription}<div>`;
+  flex.innerHTML += `<div class="flex-list"><input type="checkbox"> ${task.discription} <a class="right" href="#"><i class="fa-sharp fa-solid fa-ellipsis-vertical"></i><a><div>`;
 });
 
 
@@ -50,3 +49,9 @@ container.appendChild(clear);
 container.appendChild(btn)
 
 btn.addEventListener("click", add)
+
+
+
+
+
+document.addEventListener("click", event)
