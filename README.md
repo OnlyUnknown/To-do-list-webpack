@@ -71,6 +71,16 @@
 
 - GitHub: [OnlyUnown](https://github.com/OnlyUnknown)
 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+adding the abilty to check the completed tasks
+adding the ability to clear the completed tasks
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
