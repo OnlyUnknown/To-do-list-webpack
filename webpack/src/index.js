@@ -10,13 +10,12 @@ if(localStorage.getItem('used') === null){
     book = JSON.parse(localStorage.getItem("used"))
 }
 
-
 console.log(book)
 
 const flex = document.querySelector('.list');
 
 for(let i = 0; i < book.length; i++){
-  flex.innerHTML += `<div class="flex-list"><input type="checkbox"><div class="value-list"> ${book[i].discription} </div> <a class="right" href="#"><i class="fa-sharp fa-solid fa-ellipsis-vertical"></i></a><p class="index">${i+1}</p></div>`;
+  flex.innerHTML += `<div class="flex-list"><input type="checkbox"><div class="value-list"> ${book[i].discription} </div> <a class="right" href="#"><i class="fa-sharp fa-solid fa-ellipsis-vertical"></i></a><p class="index">${i+1}</p></div>`
 }
 
 
