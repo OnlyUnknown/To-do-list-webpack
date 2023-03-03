@@ -11,8 +11,15 @@ let event = (event) => {
       
  }
 
+ let p = document.querySelector(".index")
 
 let adde = (event) => {
+  let book = [];
+    if(localStorage.getItem('used') === null){
+        book = [];
+    }else{
+        book = JSON.parse(localStorage.getItem("used"))
+    }
     
     const value = document.querySelector(".editor")
     const newDiv = document.createElement("div")
@@ -25,8 +32,18 @@ if(value.value !== "" && event.target.classList.contains("editor")){
 event.target.nextSibling.nextSibling.firstChild.classList.toggle("fa-ellipsis-vertical");
       event.target.nextSibling.nextSibling.firstChild.classList.toggle("fa-trash")
 
+    console.log(event.target.nextSibling.nextSibling.nextSibling.innerHTML)
+  let targetE = event.target.nextSibling.nextSibling.nextSibling.innerHTML
+  console.log(targetE + "clicked")
+    book[targetE - 1].discription = value.value
+
+
     
 event.target.replaceWith(newDiv);
+  
+
+    localStorage.setItem("used",JSON.stringify(book))
+
 
 }
 
