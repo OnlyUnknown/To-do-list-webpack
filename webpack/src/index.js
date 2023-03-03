@@ -1,8 +1,8 @@
 import './style.css';
 import { add } from './add';
 import { event, adde } from './edit.js';
+import { remove } from './remove';
 
-let input = document.querySelector("input")
 
 const list = [
   {
@@ -56,7 +56,7 @@ clear.classList.add('clear');
 clear.innerHTML = 'Clear Completed';
 container.appendChild(clear);
 container.appendChild(btn)
-container.appendChild(btn2)
+
 
 document.addEventListener("keypress", (event) => {
   
@@ -64,19 +64,18 @@ document.addEventListener("keypress", (event) => {
     event.preventDefault();
     adde(event)
     document.querySelector(".edit").click();
-    
+    console.log(event)
     
   }
 });
+
+document.addEventListener("click", remove)
 
 btn.addEventListener("click", add)
 
 document.addEventListener("click", event)
 
 
-
-
-btn2.addEventListener("click", adde)
 
 
 

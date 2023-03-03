@@ -45,6 +45,12 @@ body {
   border-bottom-left-radius: 5px;
 }
 
+.editor{
+  margin: 20px;
+ 
+  
+}
+
 .enter {
   display: none;
 }

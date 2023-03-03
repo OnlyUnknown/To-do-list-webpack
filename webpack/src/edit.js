@@ -4,6 +4,8 @@ let event = (event) => {
     input.value = li
       input.classList.add("editor")
     if(event.target.classList.contains("fa-sharp")){
+        event.target.classList.toggle("fa-ellipsis-vertical")
+      event.target.classList.toggle("fa-trash")
        event.target.parentElement.previousSibling.previousSibling.replaceWith(input) 
        }
       
@@ -20,8 +22,15 @@ let adde = (event) => {
       
 if(value.value !== "" && event.target.classList.contains("editor")){
 
+event.target.nextSibling.nextSibling.firstChild.classList.toggle("fa-ellipsis-vertical");
+      event.target.nextSibling.nextSibling.firstChild.classList.toggle("fa-trash")
+
+    
 event.target.replaceWith(newDiv);
+
 }
+
+    
 
 }
 
