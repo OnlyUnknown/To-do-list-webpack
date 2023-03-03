@@ -1,5 +1,5 @@
 let event = (event) => {
-    let li = document.querySelector(".value-list").innerHTML
+    let li = event.target.parentElement.previousSibling.previousSibling.innerHTML
       let input = document.createElement("input")
     input.value = li
       input.classList.add("editor")
