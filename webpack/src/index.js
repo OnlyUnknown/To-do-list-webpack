@@ -2,6 +2,7 @@ import './style.css';
 import add from './add.js';
 import { event, adde } from './edit.js';
 import remove from './remove.js';
+import check from './module/completed';
 
 let book = [];
 if (localStorage.getItem('used') === null) {
@@ -13,7 +14,16 @@ if (localStorage.getItem('used') === null) {
 const flex = document.querySelector('.list');
 
 for (let i = 0; i < book.length; i += 1) {
-  flex.innerHTML += `<div class="flex-list"><input type="checkbox"><div class="value-list"> ${book[i].discription} </div> <a class="right" href="#"><i class="fa-sharp fa-solid fa-ellipsis-vertical"></i></a><p class="index">${i + 1}</p></div>`;
+  flex.innerHTML += `<div class="flex-list"><input class="checker" type="checkbox"><div class="value-list"> ${book[i].discription} </div> <a class="right" href="#"><i class="fa-sharp fa-solid fa-ellipsis-vertical"></i></a><p class="index">${i + 1}</p></div>`;
+}
+
+let checkInp = document.querySelectorAll(".checker")
+
+for(let i = 0; i < book.length; i += 1){
+if(book[i].Completed === true){
+  checkInp[i].checked = true
+  checkInp[i].nextSibling.classList.toggle("checked")
+}
 }
 
 const container = document.querySelector('.container');
@@ -53,3 +63,5 @@ document.addEventListener('click', remove);
 btn.addEventListener('click', add);
 
 document.addEventListener('click', event);
+
+document.addEventListener('click', check)
