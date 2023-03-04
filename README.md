@@ -90,6 +90,13 @@ adding the ability to clear the completed tasks
 Styling the page <br>
 Adding the ability to reorganize the list
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+<a href="https://onlyunknown.github.io/To-do-list-webpack/dist/">Live view</a><br>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
