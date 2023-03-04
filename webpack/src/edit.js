@@ -11,11 +11,11 @@ const event = (event) => {
 };
 
 const adde = (event) => {
-  let book = [];
+  let task = [];
   if (localStorage.getItem('used') === null) {
-    book = [];
+    task = [];
   } else {
-    book = JSON.parse(localStorage.getItem('used'));
+    task = JSON.parse(localStorage.getItem('used'));
   }
 
   const value = document.querySelector('.editor');
@@ -28,11 +28,11 @@ const adde = (event) => {
     event.target.nextSibling.nextSibling.firstChild.classList.toggle('fa-trash');
 
     const targetE = event.target.nextSibling.nextSibling.nextSibling.innerHTML;
-    book[targetE - 1].discription = value.value;
+    task[targetE - 1].discription = value.value;
 
     event.target.replaceWith(newDiv);
 
-    localStorage.setItem('used', JSON.stringify(book));
+    localStorage.setItem('used', JSON.stringify(task));
   }
 };
 
