@@ -3,6 +3,9 @@ import add from './add.js';
 import { event, adde } from './edit.js';
 import remove from './remove.js';
 import check from './module/completed';
+import clearC from './module/clearCompleted';
+
+
 
 let book = [];
 if (localStorage.getItem('used') === null) {
@@ -10,6 +13,8 @@ if (localStorage.getItem('used') === null) {
 } else {
   book = JSON.parse(localStorage.getItem('used'));
 }
+
+
 
 const flex = document.querySelector('.list');
 
@@ -57,6 +62,8 @@ document.addEventListener('keypress', (event) => {
     document.querySelector('.edit').click();
   }
 });
+
+clear.addEventListener("click", clearC)
 
 document.addEventListener('click', remove);
 
