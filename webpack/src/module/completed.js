@@ -24,9 +24,12 @@ const check = (event) =>{
     }
    }
    console.log(book[1].index)
+
+   
    localStorage.setItem('used', JSON.stringify(book));
 
    
+
 
 }
 
