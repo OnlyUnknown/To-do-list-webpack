@@ -2,18 +2,29 @@ import './style.css';
 import add from './add.js';
 import { event, adde } from './edit.js';
 import remove from './remove.js';
+import check from './module/completed.js';
+import clearC from './module/clearCompleted.js';
 
-let book = [];
+let task = [];
 if (localStorage.getItem('used') === null) {
-  book = [];
+  task = [];
 } else {
-  book = JSON.parse(localStorage.getItem('used'));
+  task = JSON.parse(localStorage.getItem('used'));
 }
 
 const flex = document.querySelector('.list');
 
-for (let i = 0; i < book.length; i += 1) {
-  flex.innerHTML += `<div class="flex-list"><input type="checkbox"><div class="value-list"> ${book[i].discription} </div> <a class="right" href="#"><i class="fa-sharp fa-solid fa-ellipsis-vertical"></i></a><p class="index">${i + 1}</p></div>`;
+for (let i = 0; i < task.length; i += 1) {
+  flex.innerHTML += `<div class="flex-list"><input class="checker" type="checkbox"><div class="value-list"> ${task[i].discription} </div> <a class="right" href="#"><i class="fa-sharp fa-solid fa-ellipsis-vertical"></i></a><p class="index">${i + 1}</p></div>`;
+}
+
+const checkInp = document.querySelectorAll('.checker');
+
+for (let i = 0; i < task.length; i += 1) {
+  if (task[i].Completed === true) {
+    checkInp[i].checked = true;
+    checkInp[i].nextSibling.classList.toggle('checked');
+  }
 }
 
 const container = document.querySelector('.container');
@@ -48,8 +59,12 @@ document.addEventListener('keypress', (event) => {
   }
 });
 
+clear.addEventListener('click', clearC);
+
 document.addEventListener('click', remove);
 
 btn.addEventListener('click', add);
 
 document.addEventListener('click', event);
+
+document.addEventListener('click', check);
