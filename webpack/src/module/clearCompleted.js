@@ -6,9 +6,7 @@ const clearC = () => {
     task = JSON.parse(localStorage.getItem('used'));
   }
 
-  const clearlist = (taskc) => {
-    return taskc.Completed === false;
-  }
+  const clearlist = (taskc) => taskc.Completed === false;
 
   task = task.filter(clearlist);
 
@@ -16,9 +14,6 @@ const clearC = () => {
     task[i].index = i + 1;
   }
 
-  console.log(task);
-
-  console.log(task);
   localStorage.setItem('used', JSON.stringify(task));
 
   const flex = document.querySelector('.list');
@@ -27,8 +22,6 @@ const clearC = () => {
   for (let i = 0; i < task.length; i += 1) {
     flex.innerHTML += `<div class="flex-list"><input class="checker" type="checkbox"><div class="value-list"> ${task[i].discription} </div> <a class="right" href="#"><i class="fa-sharp fa-solid fa-ellipsis-vertical"></i></a><p class="index">${i + 1}</p></div>`;
   }
-
-  console.log(task);
 };
 
 export default clearC;

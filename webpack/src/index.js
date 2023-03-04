@@ -5,8 +5,6 @@ import remove from './remove.js';
 import check from './module/completed.js';
 import clearC from './module/clearCompleted.js';
 
-
-
 let task = [];
 if (localStorage.getItem('used') === null) {
   task = [];
@@ -14,21 +12,19 @@ if (localStorage.getItem('used') === null) {
   task = JSON.parse(localStorage.getItem('used'));
 }
 
-
-
 const flex = document.querySelector('.list');
 
 for (let i = 0; i < task.length; i += 1) {
   flex.innerHTML += `<div class="flex-list"><input class="checker" type="checkbox"><div class="value-list"> ${task[i].discription} </div> <a class="right" href="#"><i class="fa-sharp fa-solid fa-ellipsis-vertical"></i></a><p class="index">${i + 1}</p></div>`;
 }
 
-let checkInp = document.querySelectorAll(".checker")
+const checkInp = document.querySelectorAll('.checker');
 
-for(let i = 0; i < task.length; i += 1){
-if(task[i].Completed === true){
-  checkInp[i].checked = true
-  checkInp[i].nextSibling.classList.toggle("checked")
-}
+for (let i = 0; i < task.length; i += 1) {
+  if (task[i].Completed === true) {
+    checkInp[i].checked = true;
+    checkInp[i].nextSibling.classList.toggle('checked');
+  }
 }
 
 const container = document.querySelector('.container');
@@ -63,7 +59,7 @@ document.addEventListener('keypress', (event) => {
   }
 });
 
-clear.addEventListener("click", clearC)
+clear.addEventListener('click', clearC);
 
 document.addEventListener('click', remove);
 
@@ -71,4 +67,4 @@ btn.addEventListener('click', add);
 
 document.addEventListener('click', event);
 
-document.addEventListener('click', check)
+document.addEventListener('click', check);
